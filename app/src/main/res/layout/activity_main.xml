@@ -22,25 +22,26 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/imageButton17"
+                android:id="@+id/gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
             <ImageButton
-                android:id="@+id/imageButton18"
+                android:id="@+id/camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_menu_camera" />
 
             <ImageButton
-                android:id="@+id/imageButton20"
+                android:id="@+id/clean"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                android:onClick="cleanDraw"/>
 
             <ImageButton
-                android:id="@+id/imageButton19"
+                android:id="@+id/save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_menu_save" />
@@ -66,61 +67,71 @@
                 android:id="@+id/pixel_0_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_0_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
         </TableRow>
 
@@ -134,61 +145,71 @@
                 android:id="@+id/pixel_1_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_1_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -201,61 +222,71 @@
                 android:id="@+id/pixel_2_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_2_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -268,61 +299,71 @@
                 android:id="@+id/pixel_3_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_3_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -335,61 +376,71 @@
                 android:id="@+id/pixel_4_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_4_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -402,61 +453,71 @@
                 android:id="@+id/pixel_5_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_5_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -469,61 +530,71 @@
                 android:id="@+id/pixel_6_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_6_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -536,61 +607,71 @@
                 android:id="@+id/pixel_7_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_7_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -603,61 +684,71 @@
                 android:id="@+id/pixel_8_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_8_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
         <TableRow
@@ -670,61 +761,71 @@
                 android:id="@+id/pixel_9_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell" />
 
             <Button
                 android:id="@+id/pixel_9_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_9_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell" />
         </TableRow>
 
         <TableRow
@@ -737,61 +838,71 @@
                 android:id="@+id/pixel_10_0"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_1"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_2"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_3"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_4"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_5"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_7"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_8"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
 
             <Button
                 android:id="@+id/pixel_10_9"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:background="@drawable/button_border" />
+                android:background="@drawable/button_border"
+                android:onClick="colorCell"/>
         </TableRow>
 
     </TableLayout>
@@ -806,7 +917,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button119"
+                android:id="@+id/selColor_btn"
                 android:layout_width="200dp"
                 android:layout_height="30dp" />
         </TableRow>
@@ -837,7 +948,8 @@
             android:background="#FB0606"
             android:gravity="center"
             android:shadowColor="#E11313"
-            android:textColor="#EA1010" />
+            android:textColor="#EA1010"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/fucsia_btn"
@@ -845,7 +957,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#FD00D3"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/blue_btn"
@@ -853,7 +966,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#0439DA"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/cyan_btn"
@@ -861,7 +975,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#04FBFB"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/green_btn"
@@ -869,7 +984,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#25FF00"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/yellow_btn"
@@ -877,7 +993,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#FFF600"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/orange_btn"
@@ -885,7 +1002,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#FF8400"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/purple_btn"
@@ -893,7 +1011,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#673AB7"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
         <Button
             android:id="@+id/white_btn"
@@ -901,7 +1020,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:background="#FFFFFF"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="updateSelColor"/>
 
     </TableRow>
 
