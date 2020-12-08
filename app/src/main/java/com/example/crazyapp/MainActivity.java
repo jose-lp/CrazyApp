@@ -2,11 +2,13 @@ package com.example.crazyapp;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 
+import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         selColor = -1;
         selColor_btn = (Button)  findViewById(R.id.selColor_btn);
+    }
+
+    public void openCamera(View view) {
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
     }
 
     public void updateSelColor(View view){
