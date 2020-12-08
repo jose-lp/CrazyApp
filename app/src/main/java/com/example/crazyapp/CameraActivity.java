@@ -23,13 +23,13 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
+        //setContentView(R.layout.activity_camera);
 
         // By ID we can get each component
         // which id is assigned in XML file
         // get Buttons and imageview.
         camera_open_id = (Button)findViewById(R.id.camera_button);
-        click_image_id = (ImageView)findViewById(R.id.click_image);
+        //click_image_id = (ImageView)findViewById(R.id.click_image);
 
         // Camera_open button is for open the camera
         // and add the setOnClickListener in this button
@@ -70,4 +70,7 @@ public class CameraActivity extends AppCompatActivity {
             click_image_id.setImageBitmap(photo);
         }
     }
+
+
+
 }

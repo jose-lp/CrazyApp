@@ -1,22 +1,34 @@
 package com.example.crazyapp;
 
+import android.Manifest;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import androidx.appcompat.app.AppCompatActivity;
 //import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;;
 import android.widget.Button;
 import android.view.View;
 
 import android.content.Intent;
+import android.widget.ImageButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int pic_id = 123;
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS= 7;
+
     List<Integer> listColoredCells = new ArrayList<>();
     int selColor;
     Button selColor_btn;
+    ImageButton camera_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +36,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         selColor = -1;
-        selColor_btn = (Button)  findViewById(R.id.selColor_btn);
-    }
+        selColor_btn = (Button)       findViewById(R.id.selColor_btn);
+        camera_btn   = (ImageButton)  findViewById(R.id.camera);
 
-    public void openCamera(View view) {
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        camera_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v)
+            {
+
+                // Create the camera_intent ACTION_IMAGE_CAPTURE
+                // it will open the camera for capture the image
+                Intent camera_intent
+                        = new Intent(MediaStore
+                        .ACTION_IMAGE_CAPTURE);
+
+                // Start the activity with camera_intent,
+                // and request pic id
+                startActivityForResult(camera_intent, pic_id);
+            }
+        });
+
     }
 
     public void updateSelColor(View view){
@@ -98,6 +125,5 @@ public class MainActivity extends AppCompatActivity {
     public void saveDraw(View view) {
 
     }
-
 
 }
