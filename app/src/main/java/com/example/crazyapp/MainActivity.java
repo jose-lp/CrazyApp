@@ -43,6 +43,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+class Screenshot {
+
+    public static Bitmap takeScreenshot(View view) {
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache(true);
+        Bitmap b = Bitmap.createBitmap(view.getDrawingCache());
+        view.setDrawingCacheEnabled(false);
+        return b;
+    }
+
+    public static Bitmap takeScreenshotOfRootView(View v) {
+
+        return takeScreenshot(v.getRootView());
+    }
+
+}
+
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -54,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
     Button selColor_btn;
     ImageButton camera_btn;
     ImageButton gallery_btn;
+    ImageButton save_btn;
     Uri imageUri;
     ImageView model;
-    ImageView save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,39 +82,39 @@ public class MainActivity extends AppCompatActivity {
 
         selColor     = -1;
         selColor_btn = (Button)       findViewById(R.id.selColor_btn);
-        camera_btn   = (ImageButton)  findViewById(R.id.camera);
-        gallery_btn  = (ImageButton)  findViewById(R.id.gallery);
-        model        = (ImageView)    findViewById(R.id.model);
-        save         = (ImageView)    findViewById(R.id.save);
+        camera_btn   = (ImageButton)  findViewById(R.id.camera      );
+        gallery_btn  = (ImageButton)  findViewById(R.id.gallery     );
+        save_btn     = (ImageButton)  findViewById(R.id.save        );
+        model        = (ImageView)    findViewById(R.id.model       );
 
         camera_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v)
             {
-                //Intent camera_intent
-                //        = new Intent(MediaStore
-                //        .ACTION_IMAGE_CAPTURE);
-
-                //startActivityForResult(camera_intent, pic_id);
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                 }
             }
+
         });
 
         gallery_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 openGallery();
             }
+
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
+        save_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
-                takeScreenshot();
+            public void onClick(View view) {
+                Bitmap b = Screenshot.takeScreenshotOfRootView(view);
+                saveImage(b);
             }
         });
 
@@ -171,40 +188,11 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(gallery, PICK_IMAGE);
     }
 
-    private void takeScreenshot() {
-        Date now = new Date();
-        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
-
-        try {
-            // image naming and path  to include sd card  appending name you choose for file
-            String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
-
-            // create bitmap screen capture
-            View v1 = getWindow().getDecorView().getRootView();
-            v1.setDrawingCacheEnabled(true);
-            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-            v1.setDrawingCacheEnabled(false);
-
-            File imageFile = new File(mPath);
-
-            FileOutputStream outputStream = new FileOutputStream(imageFile);
-            int quality = 100;
-            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
-            outputStream.flush();
-            outputStream.close();
-
-            //openScreenshot(imageFile);
-        } catch (Throwable e) {
-            // Several error may come out with file handling or DOM
-            e.printStackTrace();
-        }
-    }
-
-
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK && requestCode == PICK_IMAGE){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
             model.setImageURI(imageUri);
         }
@@ -240,8 +228,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-// Tell the media scanner about the new file so that it is
-// immediately available to the user.
+        // Tell the media scanner about the new file so that it is
+        // immediately available to the user.
         MediaScannerConnection.scanFile(this, new String[]{file.toString()}, null,
                 new MediaScannerConnection.OnScanCompletedListener() {
                     public void onScanCompleted(String path, Uri uri) {
@@ -250,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
     private void checkAndroidVersion() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkAndRequestPermissions();
@@ -257,9 +246,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // code for lollipop and pre-lollipop devices
         }
-
     }
-
 
     private boolean checkAndRequestPermissions() {
         int camera = ContextCompat.checkSelfPermission(this,
@@ -338,7 +325,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 
     private void showDialogOK(String message, DialogInterface.OnClickListener okListener) {
@@ -349,6 +335,5 @@ public class MainActivity extends AppCompatActivity {
                 .create()
                 .show();
     }
-
 
 }
