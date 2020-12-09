@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int pic_id = 123;
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS= 7;
+    private static final int PHOTO_SELECTED = 1;
+
 
     List<Integer> listColoredCells = new ArrayList<>();
     int selColor;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        selColor = -1;
+        selColor     = -1;
         selColor_btn = (Button)       findViewById(R.id.selColor_btn);
         camera_btn   = (ImageButton)  findViewById(R.id.camera);
 
