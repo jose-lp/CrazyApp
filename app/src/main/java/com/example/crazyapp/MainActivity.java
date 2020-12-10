@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 import androidx.appcompat.app.AlertDialog;
@@ -23,8 +24,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
@@ -36,6 +39,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
     Uri imageUri;
     ImageView model;
 
+    Bitmap model_img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         gallery_btn  = (ImageButton)  findViewById(R.id.gallery     );
         save_btn     = (ImageButton)  findViewById(R.id.save        );
         model        = (ImageView)    findViewById(R.id.model       );
+
+        selColor_btn.setBackgroundColor(Color.WHITE);
 
         camera_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -113,8 +121,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Bitmap b = Screenshot.takeScreenshotOfRootView(view);
-                saveImage(b);
+                Drawable ob = new BitmapDrawable(getResources(), model_img);
+                model.setImageResource(R.color.white);
+                Bitmap bitmap = Screenshot.takeScreenshotOfRootView(view);
+                model.setImageResource(0);
+                model.setBackground(ob);
+                bitmap = Bitmap.createBitmap(
+                        bitmap,
+                        0,
+                        570,
+                        1080,
+                        1320
+                );
+                //cropBitmap(b,246,4512);
+                saveImage(bitmap);
             }
         });
 
@@ -158,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.white_btn:
                 selColor = -1;
-                selColor_btn.setBackgroundResource(R.drawable.button_border);
+                selColor_btn.setBackgroundColor(Color.WHITE);
                 break;
             default:
                 break;
@@ -195,11 +215,17 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
             model.setImageURI(imageUri);
+            try {
+                model_img = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            model_img = imageBitmap;
             model.setImageBitmap(imageBitmap);
         }
     }
@@ -237,6 +263,30 @@ public class MainActivity extends AppCompatActivity {
                         Log.i("ExternalStorage", "-> uri=" + uri);
                     }
                 });
+    }
+
+    public static Bitmap cropBitmap(Bitmap original, int height, int width) {
+        Bitmap croppedImage = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(croppedImage);
+
+        Rect srcRect = new Rect(0, 0, original.getWidth(), original.getHeight());
+        Rect dstRect = new Rect(0, 0, width, height);
+
+        int dx = (srcRect.width() - dstRect.width()) / 2;
+        int dy = (srcRect.height() - dstRect.height()) / 2;
+
+        // If the srcRect is too big, use the center part of it.
+        srcRect.inset(Math.max(0, dx), Math.max(0, dy));
+
+        // If the dstRect is too big, use the center part of it.
+        dstRect.inset(Math.max(0, -dx), Math.max(0, -dy));
+
+        // Draw the cropped bitmap in the center
+        canvas.drawBitmap(original, srcRect, dstRect, null);
+
+        original.recycle();
+
+        return croppedImage;
     }
 
     private void checkAndroidVersion() {
