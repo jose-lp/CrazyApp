@@ -1,47 +1,35 @@
 package com.example.crazyapp;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-//import android.support.v7.app.AppCompatActivity;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Display;
-import android.view.MotionEvent;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
-
 import android.content.Intent;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
     List<Integer> listColoredCells = new ArrayList<>();
     int selColor;
+    boolean visibility;
     Button selColor_btn;
     ImageButton camera_btn;
     ImageButton gallery_btn;
     ImageButton save_btn;
+    ImageButton visibility_btn;
     Uri imageUri;
     ImageView model;
 
@@ -86,12 +76,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        selColor     = -1;
-        selColor_btn = (Button)       findViewById(R.id.selColor_btn);
-        camera_btn   = (ImageButton)  findViewById(R.id.camera      );
-        gallery_btn  = (ImageButton)  findViewById(R.id.gallery     );
-        save_btn     = (ImageButton)  findViewById(R.id.save        );
-        model        = (ImageView)    findViewById(R.id.model       );
+        selColor       = -1;
+        selColor_btn   = (Button)       findViewById(R.id.selColor_btn);
+        camera_btn     = (ImageButton)  findViewById(R.id.camera      );
+        gallery_btn    = (ImageButton)  findViewById(R.id.gallery     );
+        save_btn       = (ImageButton)  findViewById(R.id.save        );
+        visibility_btn = (ImageButton)  findViewById(R.id.visibility  );
+        model          = (ImageView)    findViewById(R.id.model       );
 
         selColor_btn.setBackgroundColor(Color.WHITE);
 
@@ -135,6 +126,21 @@ public class MainActivity extends AppCompatActivity {
                 );
                 //cropBitmap(b,246,4512);
                 saveImage(bitmap);
+            }
+        });
+
+        visibility_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                visibility = !visibility;
+                if(visibility){
+                    Drawable ob = new BitmapDrawable(getResources(), model_img);
+                    model.setImageResource(0);
+                    model.setBackground(ob);
+                }else{
+                    model.setImageResource(R.color.white);
+                }
             }
         });
 

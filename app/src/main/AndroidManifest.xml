@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrazyApp"
         android:requestLegacyExternalStorage="true">
-        <activity android:name=".CameraActivity"></activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>

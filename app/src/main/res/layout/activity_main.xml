@@ -40,6 +40,12 @@
                 android:gravity="center">
 
                 <ImageButton
+                    android:id="@+id/visibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_view" />
+
+                <ImageButton
                     android:id="@+id/gallery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
